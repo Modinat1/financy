@@ -67,7 +67,7 @@ const ExpenseBreakdown = () => {
 
   return (
     <>
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between mb-2">
         <h3 className='text-[#878787] text-md'>Expenses Breakdown</h3>
         
          <span className='flex items-center gap-2'>
@@ -75,7 +75,7 @@ const ExpenseBreakdown = () => {
         </span> 
         </div>
 
-        <div className='bg-[#FFFFFF] grid grid-cols-3 grid-rows-2 p-4 rounded-md'>
+        <div className='bg-[#FFFFFF] grid grid-cols-3 grid-rows-2 px-4 py-2 rounded-md'>
         {expenses.map((expense, index) => {
 
             const {id, title, percentage, price, icon, arrow} = expense
@@ -117,7 +117,7 @@ const ExpenseBreakdown = () => {
 
             </div>
             </div>
-            <GoArrowRight color="#9F9F9F"/>
+            <GoArrowRight color="#9F9F9F" size={25}/>
             </div>
             )
         })}

@@ -95,7 +95,7 @@ const BankCards = () => {
                 <Link href="/balanceDetails">
                 <Button
                 text="Details"
-                icon= {<MdKeyboardArrowRight color='#FFFFFF'/>}
+                icon= {<MdKeyboardArrowRight color='#FFFFFF' size={20}/>}
                 />
                 </Link>
             </div>

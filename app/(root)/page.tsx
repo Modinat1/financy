@@ -20,13 +20,13 @@ const Home = () => {
             </section>
 
             
-            <section className="grid grid-rows-2 grid-cols-5 my-5 gap-4">
+            <section className="w-full md:grid grid-rows-2 grid-cols-5 mt-5 gap-4">
 
             <div className="col-span-2 row-span-3"> <RecentTransactions /> </div>
 
-            <div className="col-span-3"> <Statistics /> </div>
+            <div className="mt-3 md:mt-0 col-span-3"> <Statistics /> </div>
 
-            <div className="row-span-2 col-span-3"> <ExpenseBreakdown /> </div>
+            <div className="mt-3 md:mt-0 row-span-2 col-span-3"> <ExpenseBreakdown /> </div>
             
             </section>
 
