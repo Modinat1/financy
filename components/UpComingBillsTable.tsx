@@ -10,6 +10,12 @@ import {
 import Button from './Button';
 
 const UpComingBillsTable = () => {
+    
+    const transactions = [
+        {id: 1, dueDay: "17 May", dueMonth: "May", logo: "Complete", item_desc: "Credit", desc_title: "figma yearly plan", lats_charge: "BC52d5DKDJS", amount: 250},
+        {id: 1, dueDay: "17 May", dueMonth: "May", logo: "Complete", item_desc: "Credit", desc_title: "figma yearly plan", lats_charge: "BC52d5DKDJS", amount: 250},  
+    ];
+
   return (
     <div>
          <Table className="bg-[#ffffff] rounded-lg p-4">

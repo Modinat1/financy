@@ -1,14 +1,22 @@
 'use client'
 
-import React from 'react'
+import React, {useState} from 'react'
 import Image from 'next/image'
 import Charts from './Charts'
 import { BsChevronRight } from "react-icons/bs";
 import MasterCard from './MasterCard';
 import Goals from './Goals';
 import UpComingBills from './UpComingBills';
+import DefaultModal from './DefaultModal';
+import EdiitTargetAmountForm from './EdiitTargetAmountForm';
 
 const TotalBalance = ({title, price}: TotalBalanceProps) => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <div className='w-full pt-4'>
 
@@ -29,7 +37,7 @@ const TotalBalance = ({title, price}: TotalBalanceProps) => {
             <div className='flex items-center gap-2'>
             <h2 className='font-bold text-[#191919] text-lg'>{price ? `$${price}` : null}</h2>
             {title === "Goals" ?
-               <div className='bg-[#F4F4F4] p-2 rounded-sm'>
+               <div className='bg-[#F4F4F4] p-2 rounded-sm' onClick={handleOpenModal}>
                <Image
                src="/icons/edit.svg"
                width={10}
@@ -104,6 +112,9 @@ const TotalBalance = ({title, price}: TotalBalanceProps) => {
         {/* Upcoming Bills ends */}        
 
         </div>
+        <DefaultModal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <EdiitTargetAmountForm/>
+        </DefaultModal> 
     </div>
   )
 }

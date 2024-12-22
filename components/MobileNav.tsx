@@ -6,19 +6,25 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Footer from "./Footer";
+import { LiaTimesSolid } from "react-icons/lia";
+import { useDispatch } from "react-redux";
+import { toggleSideBar } from "@/redux/features/HeaderSlice";
 
-const Sidebar = () => {
+const MobileNav = () => {
     const user = {
         firstName: "Modinat",
         lastName: "Adesola"
     }
 
     const pathname = usePathname()
-    
+    const dispatch = useDispatch()
     return(
-        <section className="fixed left-0 top-0 h-screen w-[20%] bg-black flex flex-col p-6 justify-between items-center">
+        <section className="fixed left-0 top-0 h-screen w-[50%] bg-black flex flex-col py-4 px-6 justify-between items-center z-50">
         
+        <LiaTimesSolid onClick={() => dispatch(toggleSideBar())} className="block ml-48 font-extrabold" size={20} color="#ffffff"/>
+            
         <nav>
+            <div className="space-y-4"></div>
             <Link href="/">
             <Image
             src="/icons/logo.svg"
@@ -29,10 +35,11 @@ const Sidebar = () => {
             />
             </Link>
 
+        {/* <div className="space-y-4"></div> */}
         {sidebarLinks.map((link) => {
             const isActive = pathname === link.route || pathname.startsWith(`${link.route}/`)
             return(
-                <Link href={link.route} key={link.route} className={cn("text-white flex gap-3 md:p-3 2xl:p-4 rounded-sm", {"bg-[#299D91]": isActive})}>
+                <Link href={link.route} key={link.route} className={cn("text-white flex gap-3 p-3 2xl:p-4 rounded-sm", {"bg-[#299D91]": isActive})}>
                 <Image
                 src={link.imgURL}
                 width={18}
@@ -48,7 +55,7 @@ const Sidebar = () => {
         })}
         </nav>
 
-        <Link href="/" className="w-full flex gap-3 md:p-3 2xl:p-4 bg-[#262626]">
+        <Link href="/" className="w-full flex gap-3 p-3 2xl:p-4 bg-[#262626]">
         <Image
         src="/icons/logout.svg"
         width={18}
@@ -63,6 +70,6 @@ const Sidebar = () => {
     )
 }
 
-export default Sidebar;
+export default MobileNav;
 
 

@@ -54,6 +54,14 @@ const BankCards = () => {
         cardNo: "3388 4556 8860 8***",
         accountBalance: 25000
     },
+    {
+        id: 7,
+        cardType: "credit card",
+        cardName: "master card",
+        cardIcon: "/icons/Mastercard.svg",
+        cardNo: "3388 4556 8860 8***",
+        accountBalance: 25000
+    },
 
 ]
   return (
