@@ -17,8 +17,8 @@ const UpComingBillsTable = () => {
     ];
 
   return (
-    <div>
-         <Table className="bg-[#ffffff] rounded-lg p-4">
+    <div className="bg-[#ffffff] rounded-lg p-4">
+         <Table>
             <TableHeader>
                 <TableRow className="font-bold text-md text-black">
                     <TableHead>Due Date</TableHead>
@@ -33,8 +33,8 @@ const UpComingBillsTable = () => {
              
             </TableBody>
 
-            <Button text="Load More" className="block mx-auto" />
         </Table>
+            <Button text="Load More" className="block mx-auto mb-3 py-2 px-10" />
     </div>
   )
 }

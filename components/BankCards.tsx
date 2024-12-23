@@ -65,11 +65,11 @@ const BankCards = () => {
 
 ]
   return (
-    <div className='grid grid-cols-3 gap-4'>
+    <div className='md:grid grid-cols-3 gap-4'>
     {cardTypes.map((card) => {
         const {id, cardType, cardName, cardIcon, cardNo, accountBalance} = card
         return(
-            <div key={id} className='bg-[#FFFFFF] shadow-md rounded-md p-4'>
+            <div key={id} className='bg-[#FFFFFF] shadow-md rounded-md p-4 mb-5 md:mb-0'>
                 {/* Card title begins */}
                 <div className='flex items-center justify-between'>
                     <h3  className='capitalize text-xs text-[#878787]'>{cardType}</h3>

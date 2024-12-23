@@ -30,7 +30,7 @@ const Charts = () => {
         <ChartContainer
           config={chartConfig}
           className="aspect-square h-[130%] max-w-[250px]"
-        //   className="aspect-square w-full max-w-[250px]"
+          // className="aspect-square h-[100%] w-full max-w-[250px]"
         >
           <RadialBarChart
             data={chartData}

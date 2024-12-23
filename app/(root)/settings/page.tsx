@@ -1,6 +1,11 @@
+import Header from "@/components/Header";
+
 const Settings = () => {
     return(
-      <div>Settings</div>
+      <div>
+        <Header hide/>
+        Settings
+      </div>
     )
 }
 

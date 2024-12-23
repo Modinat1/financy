@@ -1,4 +1,5 @@
 import StatisticsBarchart from "@/components/BarChart";
+import Header from "@/components/Header";
 import Image from 'next/image'
 import { GoArrowRight } from "react-icons/go";
 
@@ -124,6 +125,7 @@ const Expenses = () => {
 
     return(
         <section>
+            <Header hide/>
         <StatisticsBarchart/>
 
         {/* expenseBreakdown begins */}
@@ -131,13 +133,13 @@ const Expenses = () => {
         <h3 className='text-[#919191] text-lg mb-2'>Expenses Breakdown</h3>
         
         {/* <div className="rounded-lg"> */}
-        <div className='grid grid-cols-3 grid-rows-2 gap-5'>
+        <div className='md:grid grid-cols-3 grid-rows-2 gap-5'>
         {expenses.map((expense) => {
 
             const {id, title, percentage, price, icon, date, breakdown} = expense
 
             return(
-            <div key={id} className=""> 
+            <div key={id} className="mb-5 md:mb-0"> 
             
             <div className="bg-[#E8E8E8] rounded-t-lg p-4 flex justify-between items-center">
                 {/* first column */}

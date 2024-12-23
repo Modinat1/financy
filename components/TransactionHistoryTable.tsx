@@ -32,26 +32,27 @@ const TransactionHistoryTable: React.FC<TransactionHistoryTableProps> = ({ trans
         : transactions;
 
     return (
-        <Table className="bg-[#ffffff] rounded-lg p-4">
-            <TableHeader>
-                <TableRow className="font-bold text-md text-black">
-                    <TableHead>Date</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Transaction Type</TableHead>
-                    <TableHead>Receipt</TableHead>
-                    <TableHead>Amount</TableHead>
+        <div  className="bg-[#ffffff] rounded-lg p-4">
+        <Table>
+            <TableHeader >
+                <TableRow className="font-bold text-m">
+                    <TableHead className='font-extrabold text-[#191919]'>Date</TableHead>
+                    <TableHead className='font-extrabold text-[#191919]'>Status</TableHead>
+                    <TableHead className='font-extrabold text-[#191919]'>Transaction Type</TableHead>
+                    <TableHead className='font-extrabold text-[#191919]'>Receipt</TableHead>
+                    <TableHead className='font-extrabold text-[#191919]'>Amount</TableHead>
                 </TableRow>
             </TableHeader>
 
-            <TableBody className="p-4">
+            <TableBody>
                 {filteredTransactions.length > 0 ? (
                     filteredTransactions.map((transaction, index) => (
                         <TableRow key={index} className="font-medium text-xs text-[#707073]">
-                            <TableCell>{transaction.date}</TableCell>
+                            <TableCell className='font-extrabold text-[#191919] py-4'>{transaction.date}</TableCell>
                             <TableCell>{transaction.status}</TableCell>
                             <TableCell>{transaction.type}</TableCell>
                             <TableCell>{transaction.receipt}</TableCell>
-                            <TableCell>${transaction.amount.toFixed(2)}</TableCell>
+                            <TableCell className='font-extrabold text-[#191919]'>${transaction.amount.toFixed(2)}</TableCell>
                         </TableRow>
                     ))
                 ) : (
@@ -63,8 +64,9 @@ const TransactionHistoryTable: React.FC<TransactionHistoryTableProps> = ({ trans
                 )}
             </TableBody>
 
-            <Button text="Load More" className="block mx-auto" />
         </Table>
+            <Button text="Load More" className="block mx-auto mb-3 py-2 px-10" />
+        </div>
     );
 };
 
