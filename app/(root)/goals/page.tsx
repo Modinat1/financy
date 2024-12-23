@@ -1,3 +1,5 @@
+'use client'
+
 import { BsChevronDown } from "react-icons/bs";
 import GoalsBox from "@/components/Goals";
 import Header from "@/components/Header";
@@ -7,8 +9,15 @@ import { CiEdit } from "react-icons/ci";
 import ArearChartComp from "@/components/AreaChart";
 import ExpensesGoalsCategory from "@/components/ExpensesGoalsCategory";
 import PagesHeader from "@/components/PagesHeader";
+import DefaultModal from "@/components/DefaultModal";
+import EdiitTargetAmountForm from "@/components/EdiitTargetAmountForm";
+import { useState } from "react";
 
 const Goals = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
     return(
       <section>
         <Header hide/>
@@ -33,7 +42,7 @@ const Goals = () => {
         <Charts/>
         </div>
 
-      <Button text='Adjust Goal' icon={<CiEdit color="#47ABA0" size={20}/>} className="block font-bold text-[#47ABA0] border-2 border-[#47ABA0] bg-transparent px-8 py-2 mx-auto"/>
+      <Button onClick={handleOpenModal} text='Adjust Goal' icon={<CiEdit color="#47ABA0" size={20}/>} className="block font-bold text-[#47ABA0] border-2 border-[#47ABA0] bg-transparent px-8 py-2 mx-auto"/>
         </div>
         {/* First column */}
 
@@ -46,6 +55,10 @@ const Goals = () => {
 
         
         <ExpensesGoalsCategory/>
+        
+        <DefaultModal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <EdiitTargetAmountForm/>
+        </DefaultModal> 
 
       </section>
     )

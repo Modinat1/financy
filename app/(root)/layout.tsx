@@ -16,10 +16,6 @@ export default function RootLayout({ children,}: Readonly<{children: React.React
       <Sidebar />
       </div>
 
-      {/* <div className={`${showSideBar ? "flex" : "hidden"} md:hidden`}>
-        <MobileNav/>
-      </div> */}
-       {/* Mobile Navigation */}
        <div
         className={`fixed inset-0 z-20 bg-black bg-opacity-50 transform transition-transform duration-300 ease-in-out ${
           showSideBar ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"

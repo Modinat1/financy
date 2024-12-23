@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoIosArrowRoundDown } from "react-icons/io";
 import { IoIosArrowRoundUp } from "react-icons/io";
 import Image from 'next/image';
 import Button from './Button';
 import { CiEdit } from 'react-icons/ci';
 import PagesHeader from './PagesHeader';
+import DefaultModal from './DefaultModal';
+
 const ExpensesGoalsCategory = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleOpenModal = () => setIsModalOpen(true);
+    const handleCloseModal = () => setIsModalOpen(false);
     const expenses = [
         {
          id: 1,
@@ -90,12 +96,24 @@ const ExpensesGoalsCategory = () => {
                     </div>
 
                     <div>
-                    <Button text='Adjust' icon={<CiEdit color="#47ABA0" size={20}/>} className="block font-bold text-[#47ABA0] border-2 border-[#47ABA0] bg-transparent p-2"/>
+                    <Button onClick={handleOpenModal} text='Adjust' icon={<CiEdit color="#47ABA0" size={20}/>} className="block font-bold text-[#47ABA0] border-2 border-[#47ABA0] bg-transparent p-2"/>
                     </div>
                 </div>
             )
         })}
     </div>
+    <DefaultModal isOpen={isModalOpen} onClose={handleCloseModal}>
+    <form className='w-full mx-auto space-y-4'>
+        <div className=''>
+            <label className='block text-[#525256] text-sm font-bold mb-2' htmlFor="target_amount">Target Amounts</label>
+            <input className='w-full border border-[#878787] rounded-lg px-3 py-2 focus:outline-none' type="text" placeholder='$500000' />
+        </div>
+
+        <div className='my-5'>
+        <Button className='block mx-auto px-16 py-2' text='Save'/>
+        </div>
+    </form>
+        </DefaultModal> 
     </section>
   )
 }
