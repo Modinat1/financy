@@ -65,7 +65,7 @@ const TransactionHistoryTable: React.FC<TransactionHistoryTableProps> = ({ trans
             </TableBody>
 
         </Table>
-            <Button text="Load More" className="block mx-auto mb-3 py-2 px-10" />
+            <Button text="Load More" className="text-[#ffffff] block mx-auto mb-3 py-2 px-12" />
         </div>
     );
 };

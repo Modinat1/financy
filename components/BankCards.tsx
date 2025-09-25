@@ -103,7 +103,8 @@ const BankCards = () => {
                 <Link href="/balanceDetails">
                 <Button
                 text="Details"
-                icon= {<MdKeyboardArrowRight color='#FFFFFF' size={20}/>}
+                className='text-[#ffffff] py-1 px-4'
+                icon= {<MdKeyboardArrowRight color='#FFFFFF' size={25}/>}
                 />
                 </Link>
             </div>

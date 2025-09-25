@@ -15,7 +15,7 @@ const EdiitTargetAmountForm = () => {
         </div>
 
         <div className='my-5'>
-        <Button className='block mx-auto px-16 py-2' text='Save'/>
+        <Button className='text-[#ffffff] block mx-auto px-12 py-2' text='Save'/>
         </div>
     </form>
   )

@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
+import SettingsComp from "@/components/SettingsComp";
 
 const Settings = () => {
     return(
-      <div>
+      <section>
         <Header hide/>
-        Settings
-      </div>
+        <SettingsComp/>
+      </section>
     )
 }
 

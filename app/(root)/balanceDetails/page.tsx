@@ -57,6 +57,7 @@ const BalanceDetails = () => {
 
         <div className='flex items-center mt-6 gap-6'>
             <Button
+            className='text-[#ffffff] py-2 px-4'
             text='Edit Details'
             />
 
@@ -69,11 +70,6 @@ const BalanceDetails = () => {
         <PagesHeader pageTitle='Transaction History'/>
         <div className='bg-[#FFFFFF] rounded-lg p-4'>
         <TransactionHistoryTable transactions={transactions}/>
-
-        {/* <Button
-        text="Load More"
-        className='mx-auto'
-        /> */}
         </div>
         </div>
         

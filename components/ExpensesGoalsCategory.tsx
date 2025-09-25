@@ -95,9 +95,9 @@ const ExpensesGoalsCategory = () => {
                     </div>
                     </div>
 
-                    <div>
-                    <Button onClick={handleOpenModal} text='Adjust' icon={<CiEdit color="#47ABA0" size={20}/>} className="block font-bold text-[#47ABA0] border-2 border-[#47ABA0] bg-transparent p-2"/>
-                    </div>
+                    {/* <div> */}
+                    <Button onClick={handleOpenModal} text='Adjust' icon={<CiEdit color="#47ABA0" size={20}/>} className="block font-bold text-[#299D91] border-2 border-[#47ABA0] bg-transparent p-2"/>
+                    {/* </div> */}
                 </div>
             )
         })}
@@ -110,7 +110,7 @@ const ExpensesGoalsCategory = () => {
         </div>
 
         <div className='my-5'>
-        <Button className='block mx-auto px-16 py-2' text='Save'/>
+        <Button className='text-[#ffffff] block mx-auto px-12 py-2' text='Save'/>
         </div>
     </form>
         </DefaultModal> 
